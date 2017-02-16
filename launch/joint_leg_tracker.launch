@@ -15,6 +15,21 @@
  
    <!-- run local_occupancy_grid_mapping -->
   <node pkg="leg_tracker" type="local_occupancy_grid_mapping" name="local_occupancy_grid_mapping" output="screen"/> 
+  
+  <!-- Robot parameters -->
+	<param name="wheelSeparation" value="0.245"></param>
+	<param name="wheelRadius" value="0.0615"></param>
+	<param name="rate" value="10"></param>  
+	
+	<!-- Starting Joint state publisher node which will publish the joint values -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+	<!-- Starting robot state publisher -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+		<param name="publish_frequency" type="double" value="50.0"></param></node>
+		
+	<!-- Starting twist to motor and diff_tf nodes -->
+	<node pkg="rugby" type="mybot_base_controller_v1_rugby" name="mybot_base_controller_v1_rugby" output="screen"/>
+ 	<node pkg="rugby" type="mybot_odom_v1_rugby" name="mybot_odom_v1_rugby" output="screen"/>
    
 </launch>
 
