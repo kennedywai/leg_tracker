@@ -114,3 +114,13 @@ install(
 
 
 
+
+
+## Declare a C++ executable
+add_executable(87rugby_follow_me
+  src/87rugby_follow_me.cpp
+)
+add_dependencies(87rugby_follow_me ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(87rugby_follow_me
+  ${catkin_LIBRARIES}
+)

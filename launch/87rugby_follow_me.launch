@@ -8,7 +8,6 @@
   <param name="scan_frequency" value="7.5"/>  
   <param name="max_detect_distance" value="4.0"/>
   <param name="max_detected_clusters" value="3"/> 
-  <param name="confidence_threshold_to_maintain_track" value="0.35"/>
   <!-- run detect_leg_clusters -->  
   <node pkg="leg_tracker" type="detect_leg_clusters" name="detect_leg_clusters" output="screen"/>
 
