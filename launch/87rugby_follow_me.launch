@@ -5,9 +5,9 @@
   <param name="scan_topic" value="/scan" />
   <param name="fixed_frame" value="laser"/>
   <param name="scan_frequency" value="7.5"/>  
-  <param name="max_detect_distance" value="3.0"/>
+  <param name="max_detect_distance" value="4.0"/>
   <param name="max_detected_clusters" value="3"/> 
-  
+  <param name="confidence_threshold_to_maintain_track" value="0.35"/>
   <!-- run detect_leg_clusters -->  
   <node pkg="leg_tracker" type="detect_leg_clusters" name="detect_leg_clusters" output="screen"/>
 
@@ -33,7 +33,7 @@
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
   <!-- Starting robot state publisher -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
-	<param name="publish_frequency" type="double" value="50.0"></param></node>
+      <param name="publish_frequency" type="double" value="50.0"></param></node>
 		
   <!-- Starting twist to motor and diff_tf nodes -->
   <node pkg="rugby" type="mybot_base_controller_v1_rugby" name="mybot_base_controller_v1_rugby" output="screen"/>

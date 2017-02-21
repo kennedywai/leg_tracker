@@ -93,6 +93,7 @@ public:
     ROS_INFO("marker_display_lifetime: %.2f", marker_display_lifetime_);
     ROS_INFO("use_scan_header_stamp_for_tfs: %d", use_scan_header_stamp_for_tfs_);    
     ROS_INFO("max_detected_clusters: %d", max_detected_clusters_);    
+    //ROS_INFO("confidence_threshold_to_maintain_track: %.2F", confidence_threshold_to_maintain_track);
 
     // Load random forst
     forest.load(forest_file.c_str());
