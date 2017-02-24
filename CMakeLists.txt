@@ -18,6 +18,7 @@ add_message_files(
   PersonArray.msg
   Leg.msg
   LegArray.msg
+  FollowingStatus.msg
 )
 
 generate_messages(   
@@ -31,13 +32,10 @@ catkin_package(
   CATKIN_DEPENDS message_runtime
 )
 
-
 include_directories(
 	INCLUDE include
 	${catkin_INCLUDE_DIRS}
 )
-
-
 
 add_executable(
   detect_leg_clusters 
@@ -50,17 +48,16 @@ target_link_libraries(
   ${catkin_LIBRARIES}
 )
 
-
 add_executable(
   local_occupancy_grid_mapping
   src/local_occupancy_grid_mapping.cpp
   src/laser_processor.cpp
 )
+
 target_link_libraries(
   local_occupancy_grid_mapping 
   ${catkin_LIBRARIES}
 )
-
 
 add_executable(
   extract_positive_training_clusters
@@ -71,7 +68,6 @@ target_link_libraries(
   extract_positive_training_clusters
   ${catkin_LIBRARIES}
 )
-
 
 add_executable(
   train_leg_detector
@@ -97,7 +93,6 @@ add_dependencies(train_leg_detector ${PROJECT_NAME}_generate_messages_cpp)
 add_dependencies(train_leg_detector ${PROJECT_NAME}_gencpp)
 add_dependencies(train_leg_detector ${PROJECT_NAME}_gencfg)
 
-
 install(
   PROGRAMS scripts/joint_leg_tracker.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -107,20 +102,4 @@ install(
 install(
   PROGRAMS scripts/individual_leg_tracker.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
-
-
-
-
-
-
-
-## Declare a C++ executable
-add_executable(87rugby_follow_me
-  src/87rugby_follow_me.cpp
-)
-add_dependencies(87rugby_follow_me ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(87rugby_follow_me
-  ${catkin_LIBRARIES}
 )
