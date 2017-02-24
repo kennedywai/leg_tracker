@@ -52,7 +52,7 @@
       <param name="angle_compensate"    type="bool"   value="true"/></node>
 
   <!-- Running follow_me -->
-  <node pkg="lidar_follow_me" type="follow_me.cpp" name="follow_me"></node>
+  <!--node name="follow_me" pkg="lidar_follow_me"  type="follow_me" output="screen"></node-->
 
 </launch>
 
