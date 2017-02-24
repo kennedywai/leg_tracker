@@ -7,7 +7,7 @@
   <!--RPLIDAR A1's scanning frequency reached 5.5 hz when sampling 360 points eachround. And it can be configured up to 10 hz maximum.-->
   <param name="scan_frequency" value="7.5"/>  
   <param name="max_detect_distance" value="4.0"/>
-  <param name="max_detected_clusters" value="3"/> 
+  <param name="<max_detected_cl></max_detected_cl>usters" value="3"/> 
   <!-- run detect_leg_clusters -->  
   <node pkg="leg_tracker" type="detect_leg_clusters" name="detect_leg_clusters" output="screen"/>
 

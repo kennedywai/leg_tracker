@@ -1,0 +1,33 @@
+/*
+#include <ros/ros.h>
+#include <geometry_msgs/Twist.h>
+#include <nav_msgs/Odometry.h>
+#include <geometry_msgs/Vector3.h>
+#include <std_msgs/Float32.h>
+#include <std_msgs/Int8.h>
+#include <sys/time.h>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+enum Status { FAIL, DETECTING, STOP, TRACKING};
+/*
+//m_posX , m_posY为物体质心在像平面的位置。
+
+//ex, ey为误差
+
+//初始ex0, ey0为0；
+
+double ex=320-m_posX;
+
+ey=240-m_posY;
+
+vx=KP*ex+KD*(ex-ex0); //得到2个电机的速度，控制。利用电机速度不相等来转弯。
+
+vy=KP*ey+KD*(ey-ey0); 
+
+ex0=ex;
+
+ey0=ey;
+*/
